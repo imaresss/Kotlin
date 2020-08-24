@@ -1,9 +1,9 @@
 Classes in Kotlin
 
-Definition 
-1) class Customer
+1) Definition 
+ class Customer
 
-Constructor 
+2) Constructor 
 
 class Customer(var id : Int , var name : String)
 
