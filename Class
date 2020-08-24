@@ -1,0 +1,15 @@
+Classes in Kotlin
+
+Definition 
+1) class Customer
+
+Constructor 
+
+class Customer(var id : Int , var name : String)
+
+fun main(args : Array<String>){
+
+  val customer = Customer(1 , "Pulkit");
+}
+
+This defines the constructor and it is necessary to use var/val (for id and name in this case) for to make a property of class 
