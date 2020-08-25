@@ -1,0 +1,14 @@
+
+fun main (args : Array<String>)
+{
+  val nullMessage : String? = null; // the ? indicated that it can hold a null value 
+  
+  print(nullMessage.length) // this is will give error msg
+  
+  print(nullMessage?.length) //this wont give error , this says that if nullMessage is not null then print the length else just print toString of nullMessage
+ // o/p -> null
+  
+  print(nullMessage!!.length) // this will also not give compiler error , but this is will give runtime error if nullMessage is null , !! is used when compiler is
+  // giving error but u r sure that in runtime it wont be null
+  
+}
