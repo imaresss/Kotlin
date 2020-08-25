@@ -1,0 +1,17 @@
+
+
+abstract class StoreEntity{
+
+ var valueIs : Int = 3;
+  abstract fun store() // abstract method
+ fun another() : String{ // non abstract method 
+ }
+}
+
+class Employee : StoreEntity(){
+
+  override fun store(){
+    print("HELLO")
+  }
+
+}
