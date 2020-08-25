@@ -31,4 +31,6 @@ fun main(args : Array<String>){
 
 The initializer block is executed when object is created
 
+4) class Person -> this is a class declaration
 
+   class Person() -> this is a class declaration with its constructor also
