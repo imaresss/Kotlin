@@ -1,0 +1,16 @@
+open class Person(){
+  
+  open fun validate(){}
+
+}
+
+class Customer : Person(){
+  
+  override fun validate(){}
+
+  constructor() : super(){
+  }
+}
+
+fun main(args : Array <String>){
+}
