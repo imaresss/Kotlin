@@ -1,0 +1,32 @@
+
+interface Consumer{
+
+  fun getById(id : Int): Customer // no default implementation and needs to be overridden in class implementing it
+  
+  fun getStore(id : Int) : String{ // thire is defualt implementation
+  // u can write code here
+  }
+
+}
+
+
+class Employee : Consumer{
+
+  override fun getById(id : Int) : Customer{
+  }
+  
+  override fun getStore(id : Int) : String{
+  
+  super.getStore(id);
+  // u can override this method also 
+  }
+  
+
+}
+
+
+// this looks similar to abstract class , the difference between them is tht interfaces do not maintain state (i.e. u can define a property but cannot assign a 
+//value to it , another difference is that , you cannot have a class which inherits multipl normal or abstract classes , but what you can have is a class which
+// inherits a class and that class inherits multipl interfaces
+
+
