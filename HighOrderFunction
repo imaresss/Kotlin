@@ -1,0 +1,14 @@
+Higher order functions are fucntions returning a fuction
+
+fun operation(x : Int , y : Int , op:(Int , Int) -> Int) : Int{
+  
+  return op(x,y);
+
+}
+
+fun sum(x : Int , y: Int) = x + y
+
+fun main ( args : Array<String>)
+{
+  print(operation(1,2, ::sum))
+}
