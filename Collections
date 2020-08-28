@@ -1,0 +1,12 @@
+Kotlin uses java collections internally , it does not have its own collecitons class
+
+immutable list , read only, you cannot modify
+
+fun main(args:Array<String>){
+
+  val cities = listOf("a","aa","aaa") // immutable
+  val mutableCitiies = mutablelistOf("aa") // mutble can be modifed
+  mutableCitiies.add("asa");
+  
+
+}
