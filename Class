@@ -33,6 +33,44 @@ fun main(args : Array<String>){
 
 The initializer block is executed when object is created
 
-4) class Person -> this is a class declaration
+4) class Person -> this is a class declaration 
 
    class Person() -> this is a class declaration with its constructor also
+   
+   
+-----------------------ANOTHER. EXAMPLE
+
+fun main(args: Array<String>) {
+    val kevin = Student("Kevin", "Jones", 1, "some tutor")       // calling secondary constructor
+    print(kevin.id)
+    
+   val kevin2 = Student("Kevin", "Jones", 1)           // calling primary constructor
+}
+
+abstract class Person(var firstName:String, var lastName: String) {
+
+    open fun getName() : String = "$firstName $lastName"
+    abstract fun getAddress():String
+}
+
+class Student(firstName:String, lastName: String, _id:Int, var tutor:String = "") : Person(firstName, lastName) {
+    val id : Int
+    val tutor : String
+
+    init {
+        id = _id 
+        tutor = ""
+    }
+
+   constructor(firstName:String, lastName: String, _id:Int,tutor : String) : this(firstName, lastName , _id)            //secondary constructor
+   { 
+ 
+     }
+   
+
+    override fun getAddress(): String {
+        return ""
+    }
+
+    override fun getName() : String{return ""}
+}
