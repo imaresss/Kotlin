@@ -12,3 +12,36 @@ fun main ( args : Array<String>)
 {
   print(operation(1,2, ::sum))
 }
+
+
+----- BETTER EXAMPLE HERE ----
+
+fun main(args: Array<String>) {
+    var program = Program()
+    var total = 0
+    program.fibonacci(8,{it -> total += it})          // passing a lambda function and then adding to total variable
+    println(total)
+    program.fibonacci(8,{it -> println(it)})         // passing a lambda function o/p will be 1 1 2 3 etc..
+}
+
+
+class Program {
+
+    // 1, 1, 2, 3, 5, 8, 13
+
+    fun fibonacci(limit: Int, action: (Int) -> Unit) {
+        var prev = 0
+        var prevprev = 0
+        var current = 1
+
+        for (i: Int in 1..limit) {
+            action(current)
+
+            var temp = current
+            prevprev = prev
+            prev = temp
+            current = prev + prevprev
+        }
+    }
+}
+
