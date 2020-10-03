@@ -1,0 +1,22 @@
+
+
+class Meeting(val id: Int, val title: String) {
+    val people = listOf(Person("Sam"), Person("Alex"))
+}
+
+data class Person(val name: String) {
+
+}
+
+fun main(args: Array<String>) : Unit {
+
+
+    val meetings = listOf(Meeting(1, "Board Meeting"), Meeting(2, "Committee Meeting"))   // this returns list of list of person
+
+    val people: List<Person> = meetings             //flat maps returns list of person therefore flatting it 
+            .flatMap(Meeting::people)
+            .distinct()                              // removing the deuplicates. .. 
+
+    for (p in people) println(p.name)                  // op is Sam Alex .... distinct uses hashcode etc to remove duplicates and as Person is a dataclass it is possibe
+}
+
