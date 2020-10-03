@@ -1,0 +1,28 @@
+
+Filter removes the elements which return false for the condition
+Map transforms the data in the list
+
+fun main(args: Array<String>) : Unit {
+    val ints = listOf(1,2,3,4,5)
+
+    val smallInts = ints.filter{ it < 4 }              // o/p is 1 2 3 ... filter removes 4 5
+    for(i: Int in smallInts) println(i)
+
+    val squaredInts = ints.map { it*it }               //o/p is 1 4 9 16 25 .. map squares each value
+    for (i: Int in squaredInts) println(i)
+
+    val smallSquaredInts = ints                          //. combining both .. o/p is 1 4 9 16
+            .filter{ it < 5}
+            .map{ it * it }
+    for (i:Int in smallSquaredInts) println(i)
+
+    val meetings = listOf(Meeting(1, "Board Meeting"), Meeting(2, "Committee Meeting"))         // assume there is a class Meeting with title and id as properties
+
+    val titles: List<String> = meetings
+            .filter {it -> it.title.startsWith("C")}           // filtering out Board Meeting  
+            .map { m-> m.title}                                 // maaping to list<String>
+    for (t in titles) println(t)
+
+
+}
+
