@@ -1,5 +1,7 @@
 Classes in Kotlin
 
+classes and its methods are final by default 
+
 1) Definition 
  class Customer
 
