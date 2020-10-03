@@ -1,0 +1,22 @@
+
+
+fun main(args: Array<String>) {
+    var kevin = Student(1, "Kevin")
+    var jones = Student(1, "Kevin")
+
+    println(kevin)                      // this would print Student(id=1,name="Kevin) else it would have printed Object refrence it not a data class
+
+    if (kevin == jones) {               // the o/p wil be Equal as Student is a data class and in dataclass under the hood compares each value of the class
+        println("Equal")
+    } else {
+        println("Not equal")             // this would have been the o/p if Student was NOT a data class
+    }
+
+    var newKevin = kevin.copy(name = "Robert")
+
+    println(newKevin)
+}
+
+data class Student(val id: Int, val name: String) {
+
+}
