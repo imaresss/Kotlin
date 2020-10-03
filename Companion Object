@@ -1,0 +1,57 @@
+
+
+Object are basically singleton , i.e. use when u want to use that same object througout your application
+
+class Course(val Id: Int, val Title: String) {
+
+}
+object Courses {
+    var allCourses = arrayListOf<Course>()
+
+    fun initialize() {
+        allCourses.add(Course(1, "Kotlin Fundamentals"))
+    }
+}
+
+
+
+classes do not have static members , instead we use companion objects in kotlin , companion objects are normal classes but with single instance of that class
+
+--- COMPANION OBJECT ---
+
+fun main(args: Array<String>) {
+    Student.createPostgrad("Simon")           // calling companion object method ,, this looks like static call
+    Student.createUndergrad("Kevin")
+}
+
+open class Student(firstName: String, lastName: String, _id: Int, var tutor: String = "")  {
+    val id: Int
+    init {
+        id = _id
+    }
+    companion object : XmlSerializer<Student>{               // companion object can also implement an interface 
+        override fun toXml(item: Student) {                   // overriding the inerface method
+
+        }
+
+        fun createUndergrad(name: String): Undergraduate {
+            return Undergraduate(name)
+        }
+        fun createPostgrad(name: String): Postgraduate {
+            return Postgraduate(name)
+        }
+    }
+
+}
+
+class Undergraduate(firstName: String) : Student(firstName, "", 1) {
+
+}
+
+class Postgraduate(firstName: String) : Student(firstName, "", 1) {
+
+}
+
+interface XmlSerializer<T> {
+    fun toXml(item: T)
+}
