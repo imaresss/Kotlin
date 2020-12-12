@@ -1,0 +1,16 @@
+1) fun main(args : Array<String>){
+
+     runblocking{
+        delay(1000)
+     
+     }
+}
+
+2) fun main(args : Array<String>){
+      Thread.sleep(1000)
+
+}
+Consider these 2 examples , both would pause for 1sec , the difference is , in runblocking example  , the thread would give up the execution for 1sec and
+would start to work on some ther task till 1sec is over and then would resume this execution , so it is non blocking , the thread would not just block roght there 
+and do nothing , it will instead do some other task , whereas in the 2nd example , the trhead would get blocked for 1sec, doing nothing and would resume the 
+execution after 1 sec
