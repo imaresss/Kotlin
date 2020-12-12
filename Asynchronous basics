@@ -14,3 +14,11 @@ Consider these 2 examples , both would pause for 1sec , the difference is , in l
 would start to work on some ther task till 1sec is over and then would resume this execution , so it is non blocking , the thread would not just block roght there 
 and do nothing , it will instead do some other task , whereas in the 2nd example , the trhead would get blocked for 1sec, doing nothing and would resume the 
 execution after 1 sec
+
+
+Difference between launch and runblocking
+   
+   runblocking is used to run any coroutine in blocking mode i.e if there is a suspend fuction that you need to run synchronoulsy or blockingly then 
+   you can cll that function from runblocking
+   
+   launch is used run co routine asynchronously
