@@ -1,6 +1,6 @@
 1) fun main(args : Array<String>){
 
-     runblocking{
+     launch{
         delay(1000)
      
      }
