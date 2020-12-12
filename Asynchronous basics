@@ -22,3 +22,20 @@ Difference between launch and runblocking
    you can cll that function from runblocking
    
    launch is used run co routine asynchronously
+
+
+fun main(args: Array<String>) = runBlocking<Unit> {
+
+    launch {
+        delay(1000)
+        println("World")
+    }
+
+    print("Hello, ")
+
+     start()
+
+}
+suspend fun start(){
+    delay(2000)
+}
